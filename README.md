@@ -27,6 +27,14 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
+# GROUP BY
+Aggregates columns per category.
+
+Example syntax:<br/>
+SELECT customer_id,SUM(amount) FROM payment<br/>
+GROUP BY customer_id<br/>
+ORDER BY SUM(amount)
+
 # IN
 Creates a condition that checks to see if a value is included in a list of multiple options.
 
