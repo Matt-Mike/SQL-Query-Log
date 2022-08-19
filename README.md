@@ -19,6 +19,12 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
+# IN
+Creates a condition that checks to see if a value is included in a list of multiple options.
+
+SELECT color<br/>
+FROM table WHERE color IN ('red','blue')
+
 # LIMIT
 Limits the number of rows returned for a query.<br/>
 Goes at the very end of a query
