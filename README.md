@@ -22,4 +22,4 @@ The WHERE function specifies conditions on columns for the rows to be returned.
 
 SELECT column1, column2<br/>
 FROM table<br/>
-WHERE conditions
+WHERE conditions (ex: name='David')
