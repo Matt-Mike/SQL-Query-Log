@@ -10,5 +10,5 @@ SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
 # SELECT DISTINCT
-The Distinct keyword can be used to return only distinct values from a column<br/>
+The Distinct keyword can be used to return only distinct values from a column.<br/>
 SELECT DISTINCT column FROM table
