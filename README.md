@@ -1,5 +1,7 @@
-# SQL-Query-Log
+## SQL-Query-Log
 Here's a log of my SQL skillset!
+
+# Aggregate Functions
 
 # BETWEEN
 Used to match a value against a range of values.
