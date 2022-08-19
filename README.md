@@ -25,6 +25,19 @@ Creates a condition that checks to see if a value is included in a list of multi
 SELECT color<br/>
 FROM table WHERE color IN ('red','blue')
 
+# LIKE/ILIKE
+Performs pattern matching against string data with the use of **wildcard** characters
+
+% - matches any sequence of characters<br/>
+_ - matches any single character
+
+LIKE is case-sensitive<br/>
+ILIKE is not
+
+Example syntax:<br/>
+SELECT * FROM customer<br/>
+WHERE first_name ILIKE 'J%' AND last_name LIKE '%her%'
+
 # LIMIT
 Limits the number of rows returned for a query.<br/>
 Goes at the very end of a query
