@@ -8,6 +8,8 @@ SELECT COUNT column<br/>
 FROM table<br/>
 WHERE column BETWEEN 8 AND 9
 
+Can input NOT BETWEEN to return values not inbetween the designated values.
+
 # COUNT/COUNT DISTINCT
 The COUNT function returns the number of input rows that match a specific condtion of a query.<br/>
 COUNT DISTINCT will return only the distinct number of values from a column.<br/>
