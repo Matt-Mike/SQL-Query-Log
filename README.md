@@ -10,6 +10,15 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
+# LIMIT
+Limits the number of rows returned for a query.<br/>
+Goes at the very end of a query
+
+SELECT column<br/>
+FROM table<br/>
+ORDER BY column DESC<br/>
+LIMIT 5
+
 # Logical Operators
 Combine multiple comparison operators
 
