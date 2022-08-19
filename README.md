@@ -10,6 +10,13 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
+# Logical Operators
+Combine multiple comparison operators
+
+AND<br/>
+OR<br/>
+NOT<br/>
+
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
 
