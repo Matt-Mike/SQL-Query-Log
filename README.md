@@ -20,8 +20,8 @@ NOT<br/>
 # ORDER BY
 Sorts rows based on a column value, in ascending or descending order.
 
-SELECT column_1, column_2
-FROM table
+SELECT column_1, column_2<br/>
+FROM table<br/>
 ORDER BY column_1 ASC/DESC
 
 # WHERE
