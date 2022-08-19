@@ -1,7 +1,13 @@
-## SQL-Query-Log
+# SQL-Query-Log
 Here's a log of my SQL skillset!
 
 # Aggregate Functions
+AVG() - returns an average value<br/>
+  You can use ROUND() to specify precision after the decimal
+COUNT() - returns number of values<br/>
+MAX() - returns maximum value<br/>
+MIN() - returns minimum value<br/>
+SUM() - returns the sum of all values
 
 # BETWEEN
 Used to match a value against a range of values.
