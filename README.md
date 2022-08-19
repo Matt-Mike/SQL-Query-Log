@@ -17,6 +17,13 @@ AND<br/>
 OR<br/>
 NOT<br/>
 
+# ORDER BY
+Sorts rows based on a column value, in ascending or descending order.
+
+SELECT column_1, column_2
+FROM table
+ORDER BY column_1 ASC/DESC
+
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
 
