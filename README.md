@@ -31,9 +31,19 @@ FROM table
 Aggregates columns per category.
 
 Example syntax:<br/>
-SELECT customer_id,SUM(amount) FROM payment<br/>
+SELECT customer_id,SUM(amount)<br/>
+FROM payment<br/>
 GROUP BY customer_id<br/>
 ORDER BY SUM(amount)
+
+# HAVING
+Places a filter after an aggregation has already taken place
+
+SELECT company,SUM(sales)<br/>
+FROM finance_table<br/>
+WHERE company != 'Google'<br/>
+GROUP BY company<br/>
+HAVING SUM(sales) > 1000
 
 # IN
 Creates a condition that checks to see if a value is included in a list of multiple options.
