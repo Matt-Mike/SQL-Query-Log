@@ -51,6 +51,11 @@ Creates a condition that checks to see if a value is included in a list of multi
 SELECT color<br/>
 FROM table WHERE color IN ('red','blue')
 
+#JOINS (INNER/OUTER/FULL) / UNIONS / AS
+Combines information from multiples tables
+
+
+
 # LIKE/ILIKE
 Performs pattern matching against string data with the use of **wildcard** characters
 
