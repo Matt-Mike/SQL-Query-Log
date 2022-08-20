@@ -54,7 +54,10 @@ FROM table WHERE color IN ('red','blue')
 #JOINS (INNER/OUTER/FULL) / UNIONS / AS
 Combines information from multiples tables
 
+# JOINS (INNER/OUTER/LEFT/RIGHT) | AS Statement | UNION
+JOINS combine information from multiple tables
 
+**AS** creates an "alias" for a column or result
 
 # LIKE/ILIKE
 Performs pattern matching against string data with the use of **wildcard** characters
