@@ -51,13 +51,40 @@ Creates a condition that checks to see if a value is included in a list of multi
 SELECT color<br/>
 FROM table WHERE color IN ('red','blue')
 
-#JOINS (INNER/OUTER/FULL) / UNIONS / AS
-Combines information from multiples tables
-
 # JOINS (INNER/OUTER/LEFT/RIGHT) | AS Statement | UNION
 JOINS combine information from multiple tables
 
-**AS** creates an "alias" for a column or result
+**AS** creates an "alias" for a column or result<br/>
+Example syntax:<br/>
+SELECT SUM(column) AS new_name<br/>
+FROM table
+
+**INNER JOIN** returns results that match two different tables<br/>
+Examples syntax:<br/>
+SELECT * FROM TableA<br/>
+INNER JOIN TableB<br/>
+ON TableA.col_match = TableB.col_match
+
+**FULL OUTER JOIN** Combines unique values from two different tables<br/>
+Example syntax:<br/>
+SELECT * FROM customer<br/>
+FULL OUTER JOIN payment<br/>
+ON customer.customer_id = payment.customer_id<br/>
+WHERE customer.customer_id IS null<br/>
+OR payment.payment_id IS null
+
+**LEFT OUTER JOIN** Returns set of records that are in the left table AND in both tables. If there is no match with the right table, the results are null<br/>
+(Order does matter!)
+
+**RIGHT OUTER JOIN** The same as LEFT OUTER JOIN but reversed
+
+**UNION** Combines the results of tow or more SELECT statements.<br/>
+Essentially concatenates two results together.
+
+Example syntax:<br/>
+SELECT column_name(s) FROM table1<br/>
+UNION<br/>
+SELECT column_name(s) FROM table2
 
 # LIKE/ILIKE
 Performs pattern matching against string data with the use of **wildcard** characters
