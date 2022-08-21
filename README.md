@@ -31,7 +31,7 @@ FROM table
 
 Example syntax:<br/>
 CREATE TABLE players(<br/>
-   player_id SERIAL PRIMARY KEY,<br/>
+(|). player_id SERIAL PRIMARY KEY,<br/>
    column_name TYPE column_constraint,<br/>
    );
 
