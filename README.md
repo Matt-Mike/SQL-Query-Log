@@ -122,6 +122,38 @@ SELECT column_1, column_2<br/>
 FROM table<br/>
 ORDER BY column_1 ASC/DESC
 
+# TIMESTAMPS and EXTRACT
+
+TIME - Contains only time<br/>
+DATE - Contains only date<br/>
+TIMESTAMP - Contains date and time<br/>
+TIMESTAMPTZ - Contains date, time, and timezone
+
+TIMEZONE<br/>
+NOW<br/>
+TIMEOFDAY<br/>
+CURRENT_TIME<br/>
+CURRENT_DATE<br/>
+
+**EXTRACT()** - Obtain a sub-component of a date value (year, month, day, week, or quarter)<br/>
+Example syntax:<br/>
+EXTRACT(YEAR FROM date_col)
+
+SELECT EXTRACT(MONTH FROM payment_date)<br/>
+AS pay_month<br/>
+FROM payment
+
+**AGE()** - Calculates and returns the current age given to a timestamp<br/>
+AGE(date_col)<br/>
+Example return: 13 years 1 mon 5 days 01:34:13.003423
+
+**TO_CHAR()** - Converts data types to text<br/>
+Usage:<br/>
+T0_CHAR(date_col,'mm-dd-yyyy')
+
+SELECT TO_CHAR(payment_date,'MONTH-YYYY')<br/>
+FROM payment
+
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
 
