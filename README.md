@@ -27,14 +27,6 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
-# CREATE TABLE
-
-Example syntax:<br/>
-CREATE TABLE players(<br/>
-(|). player_id SERIAL PRIMARY KEY,<br/>
-   column_name TYPE column_constraint,<br/>
-   );
-
 # GROUP BY
 Aggregates columns per category.
 
