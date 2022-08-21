@@ -155,6 +155,13 @@ FROM rental<br/>
 INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id<br/>
 WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30')
 
+SELECT first_name,last_name<br/>
+FROM customer AS c<br/>
+WHERE EXISTS<br/>
+(SELECT * FROM payment AS p<br/>
+WHERE p.customer_id = c.customer_id<br/>
+AND amount > 11)
+
 # TIMESTAMPS and EXTRACT
 
 TIME - Contains only time<br/>
