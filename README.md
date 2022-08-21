@@ -139,6 +139,22 @@ SELECT LOWER(LEFT(first_name,1)) || LOWER(last_name) || '@gmail.com'<br/>
 FROM customer<br/>
 Example return: jjohnson@gmail.com
 
+# SubQuery
+
+Performs a query on the results of another query
+
+SELECT title,rental_rate<br/>
+FROM film<br/>
+WHERE rental_rate ><br/>
+(SELECT AVG(rental_rate) FROM film)
+
+SELECT film_id,title<br/>
+FROM film<br/>
+(SELECT inventory.film_id<br/>
+FROM rental<br/>
+INNER JOIN inventory ON inventory.inventory_id = rental.inventory_id<br/>
+WHERE return_date BETWEEN '2005-05-29' AND '2005-05-30')
+
 # TIMESTAMPS and EXTRACT
 
 TIME - Contains only time<br/>
