@@ -122,6 +122,23 @@ SELECT column_1, column_2<br/>
 FROM table<br/>
 ORDER BY column_1 ASC/DESC
 
+# String Functions and Operators<br/>
+Edits, combines and alters text data columns
+
+Example syntax:<br/>
+SELECT LENGTH(first_name) FROM customer<br/>
+Example return: 5
+
+SELECT first_name || last_name FROM customer<br/>
+Example return: JackJohnson
+
+SELECT first_name || ' ' || last_name<br/>
+Example return: Jack Johnson
+
+SELECT LOWER(LEFT(first_name,1)) || LOWER(last_name) || '@gmail.com'<br/>
+FROM customer<br/>
+Example return: jjohnson@gmail.com
+
 # TIMESTAMPS and EXTRACT
 
 TIME - Contains only time<br/>
