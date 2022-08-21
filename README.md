@@ -27,6 +27,14 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
+# CREATE TABLE
+
+Example syntax:<br/>
+CREATE TABLE players(<br/>
+  player_id SERIAL PRIMARY KEY,<br/>
+  column_name TYPE column_constraint,<br/>
+  );
+
 # GROUP BY
 Aggregates columns per category.
 
@@ -121,6 +129,24 @@ Sorts rows based on a column value, in ascending or descending order.
 SELECT column_1, column_2<br/>
 FROM table<br/>
 ORDER BY column_1 ASC/DESC
+
+# SELF-JOIN
+
+A query in which a table is joined to itself.<br/>
+Useful for comparing values in a column of rows within the same table.<br/>
+It is necessary to use an alias for the table.
+
+Example syntax:<br/>
+SELECT tableA.col, tableB.col<br/>
+FROM table AS tableA<br/>
+JOIN table AS tableB ON<br/>
+tableA.some_col = tableB.other_col
+
+SELECT f1.title, f2.title, f1.length<br/>
+FROM film AS f1<br/>
+INNER JOIN film AS f2 ON<br/>
+f1.film_id = f2.film_id<br/>
+AND f1.length = f2.length
 
 # String Functions and Operators<br/>
 Edits, combines and alters text data columns
