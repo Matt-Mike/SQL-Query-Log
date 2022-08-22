@@ -248,6 +248,21 @@ T0_CHAR(date_col,'mm-dd-yyyy')
 SELECT TO_CHAR(payment_date,'MONTH-YYYY')<br/>
 FROM payment
 
+#UPDATE
+Changes values of columns in a table
+
+General syntax:<br/>
+UPDATE table<br/>
+SET column1 = value1,<br/>
+    column2 = value2<br/>
+WHERE<br/>
+    condition;
+
+Example:<br/>
+UPDATE account<br/>
+SET last_login = CURRENT_TIMESTAMP<br/>
+    WHERE last_login IS NULL;
+
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
 
