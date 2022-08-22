@@ -31,8 +31,8 @@ FROM table
 General syntax:
 
 CREATE TABLE players(<br/>
-  player_id SERIAL PRIMARY KEY,<br/>
-  age INTEGER NOT NULL,<br/>
+    player_id SERIAL PRIMARY KEY,<br/>
+    age INTEGER NOT NULL,<br/>
 )
 
 Another example:<br/>
