@@ -36,7 +36,8 @@ CREATE TABLE players(<br/>
 )
 
 Another example:<br/>
-CREATE TABLE account
+CREATE TABLE account(<br/>
+  user_id SERIAL PRIMARY KEY,
 
 **SERIAL** - typical for the primary key type as it logs unique integer entries automatically upon insertion
 
