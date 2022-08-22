@@ -71,6 +71,22 @@ Creates a condition that checks to see if a value is included in a list of multi
 SELECT color<br/>
 FROM table WHERE color IN ('red','blue')
 
+# INSERT
+Add rows into a table<br/>
+General syntax:<br/>
+INSERT INTO table (column1, column2)<br/>
+VALUES<br/>
+(value1, value2),<br/>
+(value1, value2)
+
+Syntax for sharing values from another table:<br/>
+INSERT INTO table(column1,column2)<br/>
+SELECT column1,column2<br/>
+FROM another_table<br/>
+WHERE condition;
+
+Note: SERIAL columns do not need to be provided a value
+
 # JOINS (INNER/OUTER/LEFT/RIGHT) | AS Statement | UNION
 JOINS combine information from multiple tables
 
