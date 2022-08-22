@@ -27,6 +27,19 @@ SELECT COUNT (name) FROM table
 SELECT COUNT(DISTINCT name)<br/>
 FROM table
 
+# CREATE TABLE
+General syntax:
+
+CREATE TABLE players(<br/>
+  player_id SERIAL PRIMARY KEY,<br/>
+  age INTEGER NOT NULL,<br/>
+)
+
+Another example:<br/>
+CREATE TABLE account
+
+**SERIAL** - typical for the primary key type as it logs unique integer entries automatically upon insertion
+
 # GROUP BY
 Aggregates columns per category.
 
