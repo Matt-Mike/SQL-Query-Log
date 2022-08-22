@@ -37,7 +37,13 @@ CREATE TABLE players(<br/>
 
 Another example:<br/>
 CREATE TABLE account(<br/>
-  user_id SERIAL PRIMARY KEY,
+  user_id SERIAL PRIMARY KEY,<br/>
+  username VARCHAR(50) UNIQUE NOT NULL,<br/>
+  password VARCHAR(50) NOT NULL,<br/>
+  email VARCHAR(250) UNIQUE NOT NULL,<br/>
+  created_on TIMESTAMP NOT NULL,<br/>
+  last_login TIMESTAMP<br/>
+  )
 
 **SERIAL** - typical for the primary key type as it logs unique integer entries automatically upon insertion
 
