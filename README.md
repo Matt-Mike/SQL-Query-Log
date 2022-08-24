@@ -42,11 +42,46 @@ WHERE column BETWEEN 8 AND 9
 
 Can input NOT BETWEEN to return values not inbetween the designated values.
 
+# CASE
+Executes an SQL code when certain conditions are met, (similar to an IF/ELSE statement)
+
+General CASE Example query:<br/>
+SELECT customer_id,<br/>
+CASE<br/>
+    WHEN (customer_id <= 100) THEN 'Premium'
+    WHEN (customer_id BETWEEN 100 AND 200) THEN 'Plus'<br/>
+    ELSE 'Normal'<br/>
+END AS customer_class<br/>
+FROM customer
+
+Another example:<br/>
+SELECT<br/>
+SUM(CASE rental_rate<br/>
+    WHEN 0.99 THEN 1<br/>
+    ELSE 0<br/>
+END) AS number_of_bargains<br/>
+FROM film
+
+- This would return a summed number of everything given the value 1
+
+# CAST
+Converts one data type to another<br/>
+- Must be reasonable conversion
+- Ex: '5' to an integer will work, 'five' to an integer will not
+
+Syntax:<br/>
+SELECT CAST('5' AS INTEGER)
+
+Can use in a SELECT query with a column name instead of a single instance.<br/>
+Example:<br/>
+SELECT CAST(date AS TIMESTAMP)<br/>
+FROM table
+
 # CHECK
 Creates more customized constraints that adhere to a certain condition.<br/>
 Example: Making sure all inserted integer values fall below a certain threshold.
 
-Example syntax:<br/>
+Example query:<br/>
 CREATE TABLE employees(<br/>
     emp_id SERIAL PRIMARY KEY,<br/>
     first_name VARCHAR(50) NOT NULL,<br/>
@@ -55,6 +90,14 @@ CREATE TABLE employees(<br/>
     hire_date DATE CHECK (hire_date > birthdate),<br/>
     salary INTEGER CHECK (salary > 0)<br/>
     )
+
+# COALESCE
+Accepts an ulimited number of arguments. It returns the first argument that is not null. If all arguments are null, the COALESCE function will return null.
+- Useful when querying a table that contains null values and substituting it with another value.
+
+Example query:<br/>
+SELECT item,(price - COALESCE(discount,0))<br/>
+AS final FROM table
 
 # COUNT/COUNT DISTINCT
 The COUNT function returns the number of input rows that match a specific condtion of a query.<br/>
@@ -221,6 +264,17 @@ AND<br/>
 OR<br/>
 NOT<br/>
 
+# NULLIF
+Takes 2 inputs and returns NULL if both are equal. Otherwise it returns the first argument passed.<br/>
+- Useful in cases where a NULL value would cause an error or unwanted result
+
+Example:<br/>
+NULLIF(10,10)<br/>
+- Returns NULL
+
+NULLIF(10,12)<br/>
+- Returns 10
+
 # ORDER BY
 Sorts rows based on a column value, in ascending or descending order.
 
@@ -344,6 +398,18 @@ Example:<br/>
 UPDATE account<br/>
 SET last_login = created_on<br/>
 RETURNING account_id,last_login
+
+# VIEW
+Stores a specific query
+
+Example query:<br/>
+CREATE VIEW customer_info AS<br/>
+SELECT first_name,last_name,address FROM customer<br/>
+INNER JOIN address<br/>
+ON customer.address_id = address.address_id
+
+When you want to use this VIEW, you would simply input:<br/>
+SELECT * FROM customer_info
 
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
