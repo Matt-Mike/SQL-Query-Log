@@ -9,6 +9,20 @@ MAX() - returns maximum value<br/>
 MIN() - returns minimum value<br/>
 SUM() - returns the sum of all values
 
+# ALTER Table
+Allows for changes to an existing table structure
+
+**Adding columns**<br/>
+ALTER TABLE table_name<br/>
+ADD COLUMN new_col TYPE
+
+**Alter constraints**<br/>
+ALTER TABLE table_name<br/>
+ALTER COLUMN col_name<br/>
+SET DEFAULT value
+
+(Can also ADD CONSTRAINT constraint_name in place of SET DEFAULT value)
+
 # BETWEEN
 Used to match a value against a range of values.
 
@@ -46,6 +60,22 @@ CREATE TABLE account(<br/>
   )
 
 **SERIAL** - typical for the primary key type as it logs unique integer entries automatically upon insertion
+
+# DELETE
+Removes rows from a table
+
+Syntax:<br/>
+DELETE FROM table<br/>
+WHERE row_id = 1
+
+Delete rows based on their presence in other tables<br/>
+Example:<br/>
+DELETE FROM tableA<br/>
+USING tableB<br/>
+WHERE tableA.id=tableB.id
+
+Delete all rows from a table<br/>
+DELETE FROM table
 
 # GROUP BY
 Aggregates columns per category.
@@ -262,6 +292,18 @@ Example:<br/>
 UPDATE account<br/>
 SET last_login = CURRENT_TIMESTAMP<br/>
     WHERE last_login IS NULL;
+    
+**UPDATE join**<br/>
+UPDATE TableA<br/>
+SET original_col = TableB.new_col<br/>
+FROM tableB<br/>
+WHERE tableA.id = TableB.id
+
+To simply return affected rows, use the RETURNING function<br/>
+Example:<br/>
+UPDATE account<br/>
+SET last_login = created_on<br/>
+RETURNING account_id,last_login
 
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
