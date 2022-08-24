@@ -411,6 +411,8 @@ ON customer.address_id = address.address_id
 When you want to use this VIEW, you would simply input:<br/>
 SELECT * FROM customer_info
 
+To modify the VIEW, input CREATE OR REPLACE VIEW at the beginning of the query and then make the needed adjustments to the VIEW syntax
+
 # WHERE
 The WHERE function specifies conditions on columns for the rows to be returned.
 
