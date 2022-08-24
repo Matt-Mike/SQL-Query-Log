@@ -23,6 +23,16 @@ SET DEFAULT value
 
 (Can also ADD CONSTRAINT constraint_name in place of SET DEFAULT value)
 
+Example Query:<br/>
+ALTER TABLE information<br/>
+RENAME TO new_info
+
+ALTER TABLE new_info<br/>
+RENAME COLUMN person TO people
+
+ALTER TABLE new_info<br/>
+ALTER COLUMN people DROP NOT NULL
+
 # BETWEEN
 Used to match a value against a range of values.
 
@@ -31,6 +41,20 @@ FROM table<br/>
 WHERE column BETWEEN 8 AND 9
 
 Can input NOT BETWEEN to return values not inbetween the designated values.
+
+# CHECK
+Creates more customized constraints that adhere to a certain condition.<br/>
+Example: Making sure all inserted integer values fall below a certain threshold.
+
+Example syntax:<br/>
+CREATE TABLE employees(<br/>
+    emp_id SERIAL PRIMARY KEY,<br/>
+    first_name VARCHAR(50) NOT NULL,<br/>
+    last_name VARCHAR(50) NOT NULL,<br/>
+    birthdate DATE CHECK (birthdate > '1900-01-01'),<br/>
+    hire_date DATE CHECK (hire_date > birthdate),<br/>
+    salary INTEGER CHECK (salary > 0)<br/>
+    )
 
 # COUNT/COUNT DISTINCT
 The COUNT function returns the number of input rows that match a specific condtion of a query.<br/>
@@ -76,6 +100,22 @@ WHERE tableA.id=tableB.id
 
 Delete all rows from a table<br/>
 DELETE FROM table
+
+# DROP
+Removes a column in a table along with its indexes and constraints.<br/>
+Does not remove columns used in views, triggers, or stored procedures without the CASCADE clause.
+
+General syntax:<br/>
+ALTER TABLE table_name<br/>
+DROP COLUMN col_name
+
+(Insert CASCADE at the very end to remove all dependencies)
+
+Check for existence to avoid error:<br/>
+ALTER TABLE table_name<br/>
+DROP COLUMN IF EXISTS col_name
+
+(Can drop multiple columns as well)
 
 # GROUP BY
 Aggregates columns per category.
