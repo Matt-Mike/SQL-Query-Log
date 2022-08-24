@@ -248,7 +248,7 @@ T0_CHAR(date_col,'mm-dd-yyyy')
 SELECT TO_CHAR(payment_date,'MONTH-YYYY')<br/>
 FROM payment
 
-#UPDATE
+# UPDATE
 Changes values of columns in a table
 
 General syntax:<br/>
