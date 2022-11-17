@@ -419,3 +419,11 @@ The WHERE function specifies conditions on columns for the rows to be returned.
 SELECT column1, column2<br/>
 FROM table<br/>
 WHERE conditions (ex: name='David')
+
+# Window Functions
+**ROW_NUMBER()**<br/>
+
+SELECT col_name,
+    ROW_NUMBER() OVER() AS alias
+FROM table_name
+ORDER BY alias;
