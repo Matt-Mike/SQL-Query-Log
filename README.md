@@ -423,7 +423,7 @@ WHERE conditions (ex: name='David')
 # Window Functions
 **ROW_NUMBER()**<br/>
 
-SELECT col_name,
-    ROW_NUMBER() OVER() AS alias
-FROM table_name
+SELECT col_name,<br/>
+    ROW_NUMBER() OVER() AS alias<br/>
+FROM table_name<br/>
 ORDER BY alias;
