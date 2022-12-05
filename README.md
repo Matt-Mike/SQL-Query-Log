@@ -436,7 +436,7 @@ LAG(column2, 1) OVER (ORDER BY column1 ASC)<br/>
 FROM table<br/>
 ORDER BY column1 ASC;
 
-**PARTITOIN BY**<br/>
+**PARTITION BY**<br/>
 Splits the table into partitions based on a column's unique values
 
 SELECT column1, column2, column3,
