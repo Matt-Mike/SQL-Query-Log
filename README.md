@@ -435,3 +435,12 @@ SELECT column1, column2<br/>
 LAG(column2, 1) OVER (ORDER BY column1 ASC)<br/>
 FROM table<br/>
 ORDER BY column1 ASC;
+
+**PARTITOIN BY**<br/>
+Splits the table into partitions based on a column's unique values
+
+SELECT column1, column2, column3,
+LAG(column3) OVER (PARTITION BY column2
+ORDER BY column2 ASC, column1 ASC)
+FROM table_name
+ORDER BY column2 ASC, column1, ASC
