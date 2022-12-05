@@ -427,3 +427,11 @@ SELECT col_name,<br/>
     ROW_NUMBER() OVER() AS alias<br/>
 FROM table_name<br/>
 ORDER BY alias;
+
+**LAG**<br/>
+Returns column's value at the row n rows before the current row.
+
+SELECT column1, column2<br/>
+LAG(column2, 1) OVER (ORDER BY column1 ASC)<br/>
+FROM table<br/>
+ORDER BY column1 ASC;
