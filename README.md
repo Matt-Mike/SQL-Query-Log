@@ -439,8 +439,8 @@ ORDER BY column1 ASC;
 **PARTITION BY**<br/>
 Splits the table into partitions based on a column's unique values
 
-SELECT column1, column2, column3,
-LAG(column3) OVER (PARTITION BY column2
-ORDER BY column2 ASC, column1 ASC)
-FROM table_name
-ORDER BY column2 ASC, column1, ASC
+SELECT column1, column2, column3,<br/>
+LAG(column3) OVER (PARTITION BY column2<br/>
+ORDER BY column2 ASC, column1 ASC)<br/>
+FROM table_name<br/>
+ORDER BY column2 ASC, column1, ASC<br/>
