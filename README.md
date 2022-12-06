@@ -479,6 +479,19 @@ SELECT discipline, NTILE(15) OVER () AS page<br/>
 FROM disciplines<br/>
 ORDER BY page ASC;
 
+WITH Athlete_Medals AS (<br/>
+  SELECT Athlete, COUNT(*) AS Medals<br/>
+  FROM Summer_Medals<br/>
+  GROUP BY Athlete<br/>
+  HAVING COUNT(*) > 1)<br/>
+  
+SELECT<br/>
+  Athlete,<b/r>
+  Medals,<br/>
+  NTILE(3) OVER() ORDERY BY medals AS Third<br/>
+FROM Athlete_Medals<br/>
+ORDER BY Medals DESC, Athlete ASC;
+
 **PARTITION BY**<br/>
 Splits the table into partitions based on a column's unique values
 
