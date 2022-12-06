@@ -421,6 +421,13 @@ FROM table<br/>
 WHERE conditions (ex: name='David')
 
 # Window Functions
+
+**FIRST_VALUE(column)**<br/>
+Returns the first value in the table or partition.
+
+**LAST_VALUE(column)**<br/>
+Returns the last value in the table or partition.
+
 **ROW_NUMBER()**<br/>
 
 SELECT col_name,<br/>
@@ -435,6 +442,19 @@ SELECT column1, column2<br/>
 LAG(column2, 1) OVER (ORDER BY column1 ASC)<br/>
 FROM table<br/>
 ORDER BY column1 ASC;
+
+**LEAD**<br/>
+Returns column's value at the row n rows after the current row.
+
+WITH hosts AS (<br/>
+SELECT DISTINCT year, city<br/>
+FROM summer_medals)<br/>
+
+SELECT year, city,<br/>
+LEAD(city, 1) OVER (ORDER BY year ASC) AS next_city<br/>
+LEAD(city, 2) OVER (ORDER BY year ASC) AS after_next_city<br/>
+FROM hosts<br/>
+ORDER BY year ASC;
 
 **PARTITION BY**<br/>
 Splits the table into partitions based on a column's unique values
