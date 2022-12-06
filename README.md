@@ -476,3 +476,20 @@ LAG(column3) OVER (PARTITION BY column2<br/>
 ORDER BY column2 ASC, column1 ASC)<br/>
 FROM table_name<br/>
 ORDER BY column2 ASC, column1, ASC<br/>
+
+**ROW_NUMBER()**<br/>
+Assigns unique numbers to rows, regardless of duplicates.
+
+**RANK()**<br/>
+Assigns the same number to rows with identical values, skipping over the next numbers in such cases.
+
+**DENSE_RANK()**<br/>
+Also assigns the same number to rows with indetical values, but doesn't skip over the next numbers.
+
+Example syntax for ROW_NUMBER, RANK and DENSE_RANK:<br/>
+SELECT country, games,<br/>
+ROW_NUMBER() OVER (ORDER BY games DESC) AS row_n,<br/>
+RANK() OVER (ORDER BY games DESC) AS rank_n,<br/>
+DENSE_RANK() OVER (ORDER BY games DESC) AS dense_rank_n<br/>
+FROM table<br/>
+ORDER BY games DESC, country ASC;
