@@ -428,6 +428,18 @@ Returns the first value in the table or partition.
 **LAST_VALUE(column)**<br/>
 Returns the last value in the table or partition.
 
+Example Syntax for FIRST_VALUE and LAST_VALUE:<br/>
+SELECT year, city<br/>
+FIRST_VALUE(city) OVER(ORDER BY year ASC) AS first_city,<br/>
+LAST_VALUE(city) OVER(ORDER BY year ASC<br/>
+RANGE BETWEEN<br/>
+UNBOUNDED PRECEEDING AND<br/>
+UNBOUNDED FOLLOWING)<br/>
+AS last_city<br/>
+FROM hosts<br/>
+ORDER BY year ASC;
+
+
 **ROW_NUMBER()**<br/>
 
 SELECT col_name,<br/>
