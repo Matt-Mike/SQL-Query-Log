@@ -468,6 +468,17 @@ LEAD(city, 2) OVER (ORDER BY year ASC) AS after_next_city<br/>
 FROM hosts<br/>
 ORDER BY year ASC;
 
+**NTILE(n)**<br/>
+Splites the data into n approximately equal pages.
+
+WITH disciplines AS (<br/>
+SELECT DISTINCT discipline<br/>
+FROM summer_medals)
+
+SELECT discipline, NTILE(15) OVER () AS page<br/>
+FROM disciplines<br/>
+ORDER BY page ASC;
+
 **PARTITION BY**<br/>
 Splits the table into partitions based on a column's unique values
 
