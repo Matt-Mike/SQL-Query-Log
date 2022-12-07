@@ -176,6 +176,11 @@ ROWS BETWEEN 3 PRECEDING AND CURRENT ROW<br/>
 ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING<br/>
 ROWS BETWEEN 5 PRECEDING AND 1 PRECEDING
 
+**RANGE BETWEEN**:<br/>
+RANGE BETWEEN [START] AND [FINISH]<br/>
+Similar to ROWS BETWEEN<br/>
+RANGE treats duplicates in OVER's ORDER BY subclause as a single entity
+
 # GROUP BY
 Aggregates columns per category.
 
