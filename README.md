@@ -303,6 +303,29 @@ SELECT column_1, column_2<br/>
 FROM table<br/>
 ORDER BY column_1 ASC/DESC
 
+# ROLLUP and CUBE
+
+**ROLLUP**
+GROUP BY subclause that includes extra rows for group-level aggregations.
+
+Example syntax:<br/>
+SELECT country, medal, COUNT(*) AS awards<br/>
+FROM summer_medals<br/>
+WHERE year = 2008 AND country IN ('CHN', 'RUS')<br/>
+GROUP BY country, ROLLUP(country, medal)<br/>
+ORDER BY country ASC, medal ASC;
+
+GROUP BY COUNTRY, ROLLUP(medal) will count all country- and medal- level totals, then count only country- level totals and fill in medal with nulls for these rows.<br/>
+ROLLUP is hierarchical, de-aggregating from the leftmost provided column to the right-most<br/>
+ROLLUP(country, medal) includes country- level totals<br/?
+ROLLUP(medal, country) includes medal-level totals
+
+**CUBE**<br/>
+CUBE is a non-hierarchical ROLLUP<br/>
+It generates all possible group-level aggregations
+
+CUBE(country,medal) counts country-level, medal-level, and grand totals
+
 # SELF-JOIN
 
 A query in which a table is joined to itself.<br/>
