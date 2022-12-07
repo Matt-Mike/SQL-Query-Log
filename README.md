@@ -99,6 +99,15 @@ Example query:<br/>
 SELECT item,(price - COALESCE(discount,0))<br/>
 AS final FROM table
 
+Example query:<br/>
+SELECT COALESCE(country, 'Both countries') AS country,<br/>
+COALESCE(medal, 'All medals') AS medal,<br/>
+COUNT(* ) AS awards<br/>
+FROM summer_medals<br/>
+WHERE year = 2008 AND COUNTRY IN ('CHN, 'RUS')<br/>
+GROUP BY ROLLUP(country, medal)<br/>
+ORDER BY country ASC, medal ASC);
+
 # COUNT/COUNT DISTINCT
 The COUNT function returns the number of input rows that match a specific condtion of a query.<br/>
 COUNT DISTINCT will return only the distinct number of values from a column.<br/>
@@ -360,6 +369,9 @@ Example return: Jack Johnson
 SELECT LOWER(LEFT(first_name,1)) || LOWER(last_name) || '@gmail.com'<br/>
 FROM customer<br/>
 Example return: jjohnson@gmail.com
+
+# STRING_AGG<br/>
+STRING_AGG(column, separator) takes all the values of a column and concatenates them, with separator in between each value
 
 # SubQuery
 
