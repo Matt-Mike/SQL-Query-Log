@@ -160,6 +160,22 @@ DROP COLUMN IF EXISTS col_name
 
 (Can drop multiple columns as well)
 
+# FRAMES
+
+**ROWS BETWEEN**<br/>
+ROWS BETWEEN [START] AND [FINISH]
+
+**n PRECEDING:** n rows before the current row
+
+**CURRENT ROW:** the current row
+
+**n FOLLOWING:** n rows after the current row
+
+Examples:<br/>
+ROWS BETWEEN 3 PRECEDING AND CURRENT ROW<br/>
+ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING<br/>
+ROWS BETWEEN 5 PRECEDING AND 1 PRECEDING
+
 # GROUP BY
 Aggregates columns per category.
 
