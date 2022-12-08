@@ -429,6 +429,19 @@ Example Query: Extracting only the street name from an address.<br/>
 SELECT SUBSTRING(address FROM POSITION(' ' IN address)+1 FOR LENGTH(address))<br/>
 FROM address;
 
+**TRIM**<br/>
+Removes characters from the start, middle or end of a string.<br/>
+TRIM([leading | trailing  | both] [characters] FROM string)
+
+SELECT TRIM(' padded ');<br/>
+Removes all whitespace from the beginning and end of a string.
+
+**LTRIM or RTRIM**<br/>
+Removes only the spaces at the beginning or end of a string, not both.<br/>
+SELECT LTRIM(' padded ');
+
+SELECT RTRIM(' padded ');
+
 # STRING_AGG<br/>
 STRING_AGG(column, separator) takes all the values of a column and concatenates them, with separator in between each value
 
