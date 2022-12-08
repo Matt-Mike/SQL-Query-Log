@@ -442,6 +442,18 @@ SELECT LTRIM(' padded ');
 
 SELECT RTRIM(' padded ');
 
+Example:<br/>
+SELECT<br/>
+RPAD(first_name, LENGTH(first_name)+1)<br/>
+|| RPAD(last_name, LENGTH(last_name)+2, ' <') <br/>
+|| RPAD(email, LENGTH(email)+1, '>') AS full_email<br/>
+FROM customer;
+
+**LPAD**<br/>
+SELECT LPAD('padded', 10, '#');<br/>
+Returns: ####padded<br/>
+Note: Returns a character length of 10 and fills blanks space with the # symbol.
+
 # STRING_AGG<br/>
 STRING_AGG(column, separator) takes all the values of a column and concatenates them, with separator in between each value
 
