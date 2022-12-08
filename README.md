@@ -382,8 +382,11 @@ AND f1.length = f2.length
 Edits, combines and alters text data columns
 
 Example syntax:<br/>
-SELECT LENGTH(first_name) FROM customer<br/>
+SELECT **LENGTH**(first_name) FROM customer<br/>
 Example return: 5
+
+SELECT title, **CHAR_LENGTH**(title)<br/>
+FROM film;
 
 SELECT first_name || last_name FROM customer<br/>
 Example return: JackJohnson
@@ -397,6 +400,30 @@ Example return: jjohnson@gmail.com
 
 SELECT CONCAT(first_name, ' ', last_name) AS full_name<br/>
 FROM customer;
+
+**POSITION**<br/>
+SELECT email, POSITION('@' IN email)<br/>
+FROM customer;
+
+**STRPOS** Analogous to POSITION
+SELECT email, STRPOS(email, '@')<br/>
+FROM customer;
+
+**LEFT**<br/>
+SELECT LEFT(description, '50') FROM film;
+
+**RIGHT**<br/>
+SELECT RIGHT(description, '50') FROM film;
+
+**SUBSTRING**<br/>
+Extract a substring from data.
+
+SELECT SUBSTRING(description, 10, 50) FROM film AS f;<br/>
+Starting at the 10th character, the next 50 characters will be returned.
+
+SELECT SUBSTRING(email FROM 0 FOR POSITION('@' IN email))<br/>
+FROM customer;<br/>
+Example return: MARY.SMITH (returns everything before '@' in the email)
 
 # STRING_AGG<br/>
 STRING_AGG(column, separator) takes all the values of a column and concatenates them, with separator in between each value
