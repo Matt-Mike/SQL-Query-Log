@@ -425,6 +425,10 @@ SELECT SUBSTRING(email FROM 0 FOR POSITION('@' IN email))<br/>
 FROM customer;<br/>
 Example return: MARY.SMITH (returns everything before '@' in the email)
 
+Example Query: Extracting only the street name from an address.<br/>
+SELECT SUBSTRING(address FROM POSITION(' ' IN address)+1 FOR LENGTH(address))<br/>
+FROM address;
+
 # STRING_AGG<br/>
 STRING_AGG(column, separator) takes all the values of a column and concatenates them, with separator in between each value
 
