@@ -370,6 +370,9 @@ SELECT LOWER(LEFT(first_name,1)) || LOWER(last_name) || '@gmail.com'<br/>
 FROM customer<br/>
 Example return: jjohnson@gmail.com
 
+SELECT CONCAT(first_name, ' ', last_name) AS full_name<br/>
+FROM customer;
+
 # STRING_AGG<br/>
 STRING_AGG(column, separator) takes all the values of a column and concatenates them, with separator in between each value
 
