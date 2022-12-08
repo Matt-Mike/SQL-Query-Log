@@ -549,6 +549,22 @@ UPDATE account<br/>
 SET last_login = created_on<br/>
 RETURNING account_id,last_login
 
+# User Defined Data Types
+
+**ENUM**<br/>
+Enumerated data types are great options to use in your database when you have a column where you want to store a fixed list of values that rarely change. Examples include the directions on a compass (i.e., north, south, east and west).
+
+CREATE TYPE compass_position AS ENUM (<br/>
+'north',<br/>
+'south',<br/>
+'east',<br/>
+'west');
+
+Query this as:<br/>
+SELECT * <br/>
+FROM pg_type<br/>
+WHERE typname='compass_position';
+
 # VIEW
 Stores a specific query
 
