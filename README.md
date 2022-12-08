@@ -480,6 +480,16 @@ WHERE EXISTS<br/>
 WHERE p.customer_id = c.customer_id<br/>
 AND amount > 11)
 
+# Text Search
+
+**to_tsvector and tsquery**<br/>
+SELECT to_tsvector(description)<br/>
+FROM film;
+
+SELECT title, description<br/>
+FROM film<br/>
+WHERE to_tsvector(title) @@ to_tsquery('elf');
+
 # TIMESTAMPS and EXTRACT
 
 TIME - Contains only time<br/>
