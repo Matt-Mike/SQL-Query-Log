@@ -77,6 +77,19 @@ Example:<br/>
 SELECT CAST(date AS TIMESTAMP)<br/>
 FROM table
 
+# Changing the case of a string<br/>
+**Upper Case**<br/>
+SELECT UPPER(email)<br/>
+FROM customer
+
+**Lower Case**<br/>
+SELECT LOWER(email)<br/>
+FROM customer
+
+**Title Case**<br/>
+SELECT INITCAP(title)<br/>
+FROM film
+
 # CHECK
 Creates more customized constraints that adhere to a certain condition.<br/>
 Example: Making sure all inserted integer values fall below a certain threshold.
@@ -311,6 +324,18 @@ Sorts rows based on a column value, in ascending or descending order.
 SELECT column_1, column_2<br/>
 FROM table<br/>
 ORDER BY column_1 ASC/DESC
+
+# REPLACE<br/>
+Replace characters in a string.
+
+SELECT REPLACE(description, 'A Astounding', 'An Astounding') AS description<br/>
+FROM film
+
+# REVERSE<br/>
+Reverses the order of a string.
+
+SELECT title, REVERSE(title)<br/> 
+FROM film AS f
 
 # ROLLUP and CUBE
 
